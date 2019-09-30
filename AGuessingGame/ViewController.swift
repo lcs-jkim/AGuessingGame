@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         
         //speak the message
         synthesizer.speak(utterance)
+        //finished
     }
 
 
