@@ -21,7 +21,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        // Make an object named 'synthesizer', which is an instance of the class 'AVspeechSynthesizer' 
+        // Make an object named 'synthesizer', which is an instance of the class 'AVspeechSynthesizer'
+        
+        let synthesizer = AVSpeechSynthesizer()
+        
+        // Create a string that contains what we want the computer to say
+        let message = "I'm thinking of a number between 1 and 100. Guess what it is."
+      
+        // make an object named 'utterance' which is an instance of the class AVSpeechUtterance
+        var utterance = AVSpeechUtterance(string: message)
+        
+        //speak the message
+        synthesizer.speak(utterance)
     }
 
 
