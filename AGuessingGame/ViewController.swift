@@ -37,6 +37,16 @@ class ViewController: UIViewController {
         //finished
     }
 
-
+    // will be used to check a guess
+    @IBAction func checkGuess(_ sender: Any) {
+        // obtain the guess value from the textfield
+        let guessText = SubmittedGuess.text!
+        let guessNumber = Int(guessText)
+        
+        // For testing purposes, what was the guess?
+        print("For testig purposes, the guess made was \(guessNumber)")
+    
+    }
+    
 }
 
