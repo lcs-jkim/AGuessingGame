@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         let message = "I'm thinking of a number between 1 and 100. Guess what it is."
       
         // make an object named 'utterance' which is an instance of the class AVSpeechUtterance
-        var utterance = AVSpeechUtterance(string: message)
+        let utterance = AVSpeechUtterance(string: message)
         
         //speak the message
         synthesizer.speak(utterance)
@@ -41,12 +41,20 @@ class ViewController: UIViewController {
     @IBAction func checkGuess(_ sender: Any) {
         // obtain the guess value from the textfield
         let guessText = SubmittedGuess.text!
-        let guessNumber = Int(guessText)
+        let guessNumber = Int(guessText)!
         
         // For testing purposes, what was the guess?
         print("For testig purposes, the guess made was \(guessNumber)")
     
+        // Give the appropriate feedback to the user
+        if guessNumber > targetNumber {
+        print("Guess lower next time")
+        } else if guessNumber < targetNumber {
+            print("Guess higher next time")
+        } else {
+            print("You got it")
+        }
+        
     }
-    
-}
 
+}
